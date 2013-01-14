@@ -1,5 +1,14 @@
 var mongo = require('mongodb');
 
+
+function printObject(o) {
+  var out = '';
+  for (var p in o) {
+    out += p + ': ' + o[p] + '\n';
+  }
+  console.log(out);
+}
+
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
@@ -24,6 +33,7 @@ exports.findById = function(req, res) {
     console.log('Retrieving wine: ' + id);
     db.collection('wines', function(err, collection) {
         collection.findOne({'_id':new BSON.ObjectID(id)}, function(err, item) {
+            printObject(item);
             res.send(item);
         });
     });

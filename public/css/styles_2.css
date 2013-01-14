@@ -66,8 +66,9 @@ legend {
     font-family: "Andika";
     font-size: 36;
     color: white;
-    background-image: url('img/Eget-rum.gif');
-    background-size: cover;
+    /*background-image: url('img/bg.jpg');
+    background-size: cover;*/
+    background-color: #f5f5f5;
     background-repeat: no-repeat;
     margin-top: -19px;
     padding: 180px;
