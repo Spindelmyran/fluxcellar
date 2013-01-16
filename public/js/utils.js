@@ -6,6 +6,9 @@ window.utils = {
         var deferreds = [];
 
         $.each(views, function(index, view) {
+            //alert('view : '+view);
+                              //alert('window[view].prototype.template'+window[view].prototype.template);
+                    
             if (window[view]) {
                 deferreds.push($.get('tpl/' + view + '.html', function(data) {
                     window[view].prototype.template = _.template(data);

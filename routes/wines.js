@@ -12,22 +12,46 @@ function printObject(o) {
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
+    
+//var server = new Server('localhost', 27017, {auto_reconnect: true});
+//db = new Db('winedb', server, {safe: true});
+//var server = new Server('mongodb://nodejitsu:f9799309d4618c1801e87d3c01f7e066@alex.mongohq.com', 10070, {auto_reconnect: true});
+//db = new Db('nodejitsudb489612271065', server, {safe: true});
+db = new Db('nodejitsudb489612271065',new mongo.Server('alex.mongohq.com', 10070, {auto_reconnect: true}));
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('winedb', server, {safe: true});
-
+db.open(function (err, db) {
+               if (err) { throw err; }
+               db.authenticate('nodejitsu', 'f9799309d4618c1801e87d3c01f7e066', function (err, replies) {
+                 // You are now connected and authenticated.
+                console.log('connected');
+                
+                
+                db.collection('nodejitsudb489612271065', {safe:true}, function(err, collection) {
+            if (err) {
+                console.log("The 'wines' collection doesn't exist. Creating it with sample data...");
+                populateDB();
+            }
+        });
+                
+                
+                
+                
+                
+               });
+             });
+/*
 db.open(function(err, db) {
     if(!err) {
         console.log("Connected to 'winedb' database");
         db.collection('wines', {safe:true}, function(err, collection) {
-            if (err) {
+            if (!err) {
                 console.log("The 'wines' collection doesn't exist. Creating it with sample data...");
                 populateDB();
             }
         });
     }
 });
-
+*/
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving wine: ' + id);
