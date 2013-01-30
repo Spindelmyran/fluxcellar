@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node Cellar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+	 <style>
+        #element_to_pop_up { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+}
+.bClose{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="http://use.edgefonts.net/andika.js"></script>
+    <script src="http://use.edgefonts.net/arvo.js"></script>
+
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+
+    <script>
+// UNCOMMENT THIS CODE IF YOU USE THE "serverwithanalytics" SERVER
+//        var socket = io.connect();
+//        socket.on('connect', function () {
+//            socket.send(window.location.href);
+//        });
+//        window.onhashchange = function () {
+//            socket.send(window.location.href);
+//        }
+    </script>
+
+</head>
+
+<body>
+	
+<!-- Element to pop up -->
+<div id="element_to_pop_up">
+    <a class="bClose">x<a/>
+    <img src="pics/Eget-rum.gif">
+</div>
+	
+<div class="header"></div>
+
+<div class="container">
+
+    <div class="row-fluid">
+        <div id="content" class="span12>"></div>
+		
+    </div>
+
+    <footer class="footer">
+        <p class="pull-right"><a href="#">Back Home</a></p>
+        <p>Här kan man skriva något om man vill <br/>
+        Här kan man skriva något om man vill </p>
+		
+		
+		
+    </footer>
+
+	
+	
+</div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="lib/jquery-1.8.2.min.js"></script>
+<script src="lib/jquery.mobile-1.2.0"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+
+
+<script src="js/utils.js"></script>
+<script src="js/models/models.js"></script>
+<script src="js/views/paginator.js"></script>
+<script src="js/views/header.js"></script>
+<script src="js/views/home.js"></script>
+<script src="js/views/winelist.js"></script>
+<script src="js/views/winedetails.js"></script>
+<script src="js/views/about.js"></script>
+<script src="js/main.js"></script>
+<script src="lib/bpopup.js"></script>
+
+</body>
+</html>

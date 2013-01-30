@@ -1,7 +1,7 @@
 {
-  "name": "paintebbatest",
+  "name": "fluxnode.se",
   "description": "paint show",
-  "version": "0.0.1",
+  "version": "0.0.1-8",
   "private": true,
   "dependencies": {
     "express": "3.x",
@@ -15,5 +15,9 @@
     "node": "0.8.x",
     "npm": "1.1.49"
   },
-  "subdomain": "spindelmyran.nodecellar"
+  "subdomain": "fluxnode",
+    "domains": [
+    "fluxnode.se",
+    "www.fluxnode.se"
+  ]
 }
